@@ -4,25 +4,25 @@
             <img  class="header__logo" src="@/assets/logo.png" alt="logo"/>
             <nav class="header__nav">
                 <a @click="onClickMenuItem('home')" class="header__nav_link">Home</a>
-                <a class="header__nav_link">About</a>
-                <a class="header__nav_link">Platform</a>
+                <a href="#section_1" class="header__nav_link">About</a>
+                <a href="#section_2" class="header__nav_link">Platform</a>
                 <a class="header__nav_link">MVP</a>
                 <a class="header__nav_link">Coins</a>
                 <a class="header__nav_link">Roadmap</a>
                 <a class="header__nav_link">Faqs</a>
                 <a class="header__nav_link">Contacts</a>
             </nav>
-            <Button v-bind:variant="non-bg"  v-bind:name="Dashboard"/>
+            <custom-button name="Dashboard" variant="non_bg_btn"/>
         </div>
     </header>
 </template>
 
 <script>
-import Button from '@/UIKit/Button/Button.vue';
+import CustomButton from '@/UIKit/Button/CustomButton.vue';
     export default {
     name: 'Header',
     components: {
-        Button,
+        CustomButton,
     },
     methods: {
         onClickMenuItem(type) {
@@ -53,6 +53,7 @@ import Button from '@/UIKit/Button/Button.vue';
         display: flex;
         height: 100%;
         margin: 0 auto;
+        align-items: center;
 
     }
 
@@ -65,7 +66,7 @@ import Button from '@/UIKit/Button/Button.vue';
             font-family: 'Roboto', sans-serif;
             color: white;
             font-size: 15px;
-            font-weight: 400px;
+            font-weight: 400;
             cursor: pointer;
             &:hover {
                 color: #f42f54;
